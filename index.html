@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="items__container">
+        <h1 class="h1-desserts">Desserts</h1>
+        <div id="items__display"></div>
+      </div>
+
+      <div id="cart__display">
+        <div class="big__display__box">
+          <h3 id="count-number">your cart (0)</h3>
+          <div id="empty-div" class=""></div>
+          <div id="display-cart-items">
+            <!-- <div class="major-item-display">
+              <div class="major-item">
+                <div class="name-of-item">waffle</div>
+                <div class="price-of-item"><span>2x</span>$3.50</div>
+              </div>
+              <div class="math__sign">x</div>
+            </div> -->
+          </div>
+          <div id="order-total" class="">
+            <span id="order-total-1">Order Total</span
+            ><span id="order-total-2">$0</span>
+          </div>
+          <div id="carbon-neutral" class="">
+            <img
+              src="./assets/images/icon-carbon-neutral.svg"
+              alt="carbon neutral delivery"
+            /><span
+              >This is a
+              <bold style="font-weight: 600">carbon-neutral</bold>
+              delivery</span
+            >
+          </div>
+          <div id="confirm-order-button" class="hide-element">
+            confirm order
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hide-element" id="div-overlay"></div>
+    <div class="display-order hide-element" id="div-display-order">
+      <img src="./assets/images/icon-order-confirmed.svg" />
+      <h1 style="">Order confirmed</h1>
+      <h5 style="">we hope you enjoy your food!</h5>
+      <div id="display-order-cart">
+        <!-- <div class="display-order-cart-item"> -->
+        <!-- <div class="cart-flex">
+          <div class="rose-500">waffle</div>
+          <div class="cart-flex-inner-div"><span class="main-red">2x</span> <span class="rose-300">@ $3.50</span> </div>
+          </div>
+          <div class="price-quantity rose-500">455</div> -->
+        <!-- </div> -->
+      </div>
+      <div id="display-order-total">
+        <h5>Order Total</h5>
+        <h2>$0</h2>
+      </div>
+      <div id="start-new-order">start new order</div>
+    </div>
+
+    <div id="customer-form" class="hide-element">
+      <div>
+        <div>
+          <label for="customerName">Name:</label>
+          <input type="text" id="customerName" required />
+        </div>
+        <div>
+          <label for="customerEmail">Email:</label>
+          <input type="email" id="customerEmail" />
+        </div>
+        <div>
+          <label for="customerPhone">Phone:</label>
+          <input type="tel" id="customerPhone" />
+        </div>
+        <div>
+          <label for="address">Delivery Address:</label>
+
+          <textarea id="address"></textarea>
+        </div>
+        <button type="button" id="submit-details-button">submit details</button>
+        </div>
+    
+    </div>
+    <!-- 
+  <button type="button" id="addBtn">add to cart</button>
+  <button type="button" id="removeBtn">remove from cart</button>
+  <button type="button" id="delBtn">remove specific item from cart</button>
+   -->
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
