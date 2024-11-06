@@ -32,3 +32,23 @@ with app.app_context():
 with app.app_context():
     db.create_all()
     print("Tables created successfully!")
+    
+    
+    
+    
+    
+# import uuid
+# from flask_sqlalchemy import SQLAlchemy
+
+# db = SQLAlchemy()
+
+# class YourModel(db.Model):
+#     __tablename__ = 'your_model'
+
+#     # Define a UUID primary key field as a string
+#     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()), unique=True, nullable=False)
+#     name = db.Column(db.String(100), nullable=False)
+#     description = db.Column(db.String(200), nullable=True)
+
+#     def __repr__(self):
+#         return f"<YourModel {self.id}>"

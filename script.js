@@ -44,15 +44,15 @@ async function loadData() {
     div.classList.add("cart__item");
     div.innerHTML = `
          <div data-cart-box-board=${item.category} data-item-image=${
-      item.image.desktop
-    } class="cart__box" style="background-image: url('${
-      item.image.desktop
-    }');background-size: cover; background-position: center;">
+           item.image.desktop
+         } class="cart__box" style="background-image: url('${
+           item.image.desktop
+         }');background-size: cover; background-position: center;">
 
-         
+
           <div data-item-price=${item.price} data-category=${
-      item.category
-    } class="add-cart-btn non-edit "><img class="add-to-cart-styling" src="./assets/images/icon-add-to-cart.svg" alt="add to cart svg"> Add to cart</div>
+            item.category
+          } class="add-cart-btn non-edit "><img class="add-to-cart-styling" src="./assets/images/icon-add-to-cart.svg" alt="add to cart svg"> Add to cart</div>
          </div>
         <div class="caption__section">
           <h6 class="item-h6-category">${item.category}</h6>
@@ -101,10 +101,6 @@ async function loadData() {
     });
   });
 
-  
-
-
-
   async function submitOrder() {
     const orderCart = {
       customer_name: document.getElementById("customerName").value,
@@ -126,9 +122,8 @@ async function loadData() {
       if (response.ok) {
         console.log("order Placed successfully!");
 
-        // customerForm.classList.add("hide-element"); 
-        //will definitely happen
-        // divDisplayOrder.classList.remove("hide-element");
+        customerForm.classList.add("hide-element");
+        divDisplayOrder.classList.remove("hide-element");
 
         // setTimeout(() => {
         // }, 4000);
@@ -143,10 +138,8 @@ async function loadData() {
 
   submitDetailsButton.addEventListener("click", (event) => {
     event.preventDefault();
-   
-     submitOrder();
 
-  
+    submitOrder();
   });
 
   confirmOrderButton.addEventListener("click", () => {
@@ -208,7 +201,7 @@ async function loadData() {
 
       function addDeleteFunctionality(itemCategory) {
         const deleteButton = document.querySelector(
-          `#item-${itemCategory} .math__sign__2`
+          `#item-${itemCategory} .math__sign__2`,
         );
 
         deleteButton.addEventListener("click", () => {
@@ -228,7 +221,7 @@ async function loadData() {
           count = getAllCounts();
           total_price = Object.values(cartStore).reduce(
             (sum, item) => sum + item.price * item.count,
-            0
+            0,
           );
 
           console.log(`Total price after deletion: $${total_price.toFixed(2)}`);
@@ -263,7 +256,7 @@ async function loadData() {
             cartStore[itemCategory].count * cartStore[itemCategory].price;
           cartCount.textContent = cartStore[itemCategory].count;
           console.log(
-            `${itemCategory} was decreased, current count: ${cartStore[itemCategory].count}`
+            `${itemCategory} was decreased, current count: ${cartStore[itemCategory].count}`,
           );
 
           count = getAllCounts();
@@ -286,27 +279,27 @@ async function loadData() {
           }
 
           let divMajorItemDisplay = document.querySelector(
-            `#item-${itemCategory}`
+            `#item-${itemCategory}`,
           );
 
           if (cartStore[itemCategory].count > 0) {
             // If the item count is still greater than 0, update the item's display
-            divMajorItemDisplay.innerHTML = `    
-            
+            divMajorItemDisplay.innerHTML = `
+
               <div class="major-item">
                 <div class="name-of-item">${itemCategory}</div>
                 <div class="price-of-item"><span>${
                   cartStore[itemCategory].count
                 }x</span><span class="price-of-item-span-1">@ $${cartStore[
-              itemCategory
-            ].price.toFixed(2)}</span>
+                  itemCategory
+                ].price.toFixed(2)}</span>
                 <span class="price-of-item-span-2">$${cartStore[
                   itemCategory
                 ].total_mix.toFixed(2)}</span>
                 </div>
               </div>
               <div class="math__sign__2"><img src="./assets/images/icon-remove-item.svg" alt="remove-item-svg"></div>
-          
+
           `;
           } else {
             // If the item count is 0, remove the item from the cart display
@@ -322,7 +315,7 @@ async function loadData() {
 
         console.log(
           "divMajorItemDisplay = ",
-          Array.from(document.querySelectorAll(".major-item-display"))
+          Array.from(document.querySelectorAll(".major-item-display")),
         );
         addDeleteFunctionality(itemCategory);
       });
@@ -333,7 +326,7 @@ async function loadData() {
           cartStore[itemCategory].count * cartStore[itemCategory].price;
         cartCount.textContent = cartStore[itemCategory].count;
         console.log(
-          `${itemCategory} was increased, current count: ${cartStore[itemCategory].count}`
+          `${itemCategory} was increased, current count: ${cartStore[itemCategory].count}`,
         );
 
         count = getAllCounts();
@@ -342,7 +335,7 @@ async function loadData() {
         // console.log("displayArr current state ",displayArr);
 
         let filteredDesserts = Object.fromEntries(
-          Object.entries(cartStore).filter(([key, value]) => value.count > 0)
+          Object.entries(cartStore).filter(([key, value]) => value.count > 0),
         );
         console.log("filtered = ", filteredDesserts);
         //   console.log(Object.values(filteredDesserts));
@@ -359,12 +352,12 @@ async function loadData() {
                 <div class="price-of-item"><span>${
                   dessert.count
                 }x</span><span class="price-of-item-span-1">@ $${dessert.price.toFixed(
-              2
-            )}</span>
-                <span class="price-of-item-span-2">$${dessert.total_mix.toFixed(
-                  2
+                  2,
                 )}</span>
-                
+                <span class="price-of-item-span-2">$${dessert.total_mix.toFixed(
+                  2,
+                )}</span>
+
                 </div>
               </div>
               <div class="math__sign__2"><img src="./assets/images/icon-remove-item.svg" alt="remove-item-svg"></div>
@@ -376,42 +369,42 @@ async function loadData() {
             displayCartItems.appendChild(divMajorItemDisplay);
 
             divMajorItemDisplay.innerHTML = `
-              
+
                 <div class="major-item">
                   <div class="name-of-item">${item}</div>
                   <div class="price-of-item"><span>${
                     dessert.count
                   }x</span><span class="price-of-item-span-1">@ $${dessert.price.toFixed(
-              2
-            )}</span>
+                    2,
+                  )}</span>
                   <span class="price-of-item-span-2">$${dessert.total_mix.toFixed(
-                    2
+                    2,
                   )}</span>
                   </div>
                 </div>
                 <div class="math__sign__2"><img src="./assets/images/icon-remove-item.svg" alt="remove-item-svg"></div>
-              
+
             `;
           }
 
           let divDisplayOrderItem = document.getElementById(
-            `item-display-order-${item}`
+            `item-display-order-${item}`,
           );
 
           if (divDisplayOrderItem) {
             divDisplayOrderItem.classList.add("display-order-cart-item");
             divDisplayOrderItem.innerHTML = `
-            
+
             <div class="cart-flex">
                 <div class="rose-500">${item}</div>
                 <div class="cart-flex-inner-div"><span class="main-red">${
                   dessert.count
                 }x</span><span class="rose-300">@ ${dessert.price.toFixed(
-              2
-            )}</span> </div>
+                  2,
+                )}</span> </div>
               </div>
               <div class="price-quantity rose-500">$${dessert.total_mix.toFixed(
-                2
+                2,
               )}</div>
             `;
           } else {
@@ -420,20 +413,20 @@ async function loadData() {
             divDisplayOrderItem.id = `item-display-order-${item}`;
             displayOrderCart.appendChild(divDisplayOrderItem);
             divDisplayOrderItem.innerHTML = `
-            
+
           <div class="cart-flex">
                 <div class="rose-500">${item}</div>
                 <div class="cart-flex-inner-div"><span class="main-red">${
                   dessert.count
                 }x</span><span class="rose-300">@ ${dessert.price.toFixed(
-              2
-            )}</span> </div>
+                  2,
+                )}</span> </div>
                 </div>
                 <div class="price-quantity rose-500">$${dessert.total_mix.toFixed(
-                  2
+                  2,
                 )}</div>
-            
-          
+
+
         `;
           }
 
@@ -442,7 +435,7 @@ async function loadData() {
 
         console.log(
           "divMajorItemDisplay = ",
-          Array.from(document.querySelectorAll(".major-item-display"))
+          Array.from(document.querySelectorAll(".major-item-display")),
         );
 
         total_price += itemPrice;

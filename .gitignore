@@ -16,3 +16,4 @@
 .prettierignore
 
 .venv
+__pycache__

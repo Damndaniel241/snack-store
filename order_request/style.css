@@ -1,0 +1,207 @@
+:root {
+  --mainRed: hsl(14, 86%, 42%);
+  --mainGreen: hsl(159, 69%, 38%);
+  --Rose-50: hsl(20, 50%, 98%);
+  --Rose-100: hsl(13, 31%, 94%);
+  --Rose-300: hsl(14, 25%, 72%);
+  --Rose-400: hsl(7, 20%, 60%);
+  --Rose-500: hsl(12, 20%, 44%);
+  --Rose-900: hsl(14, 65%, 9%);
+}
+
+html {
+    box-sizing: border-box;
+  } 
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.rose-50 {
+  color: hsl(20, 50%, 98%);
+}
+.rose-100 {
+  color: hsl(13, 31%, 94%);
+}
+.rose-300 {
+  color: hsl(14, 25%, 72%);
+}
+.rose-400 {
+  color: hsl(7, 20%, 60%);
+}
+.rose-500 {
+  color: hsl(12, 20%, 44%);
+}
+.rose-900 {
+  color: hsl(14, 65%, 9%);
+}
+.main-red {
+  color: hsl(14, 86%, 42%);
+}
+:root {
+  --mainRed: hsl(14, 86%, 42%);
+  --mainGreen: hsl(159, 69%, 38%);
+  --Rose-50: hsl(20, 50%, 98%);
+  --Rose-100: hsl(13, 31%, 94%);
+  --Rose-300: hsl(14, 25%, 72%);
+  --Rose-400: hsl(7, 20%, 60%);
+  --Rose-500: hsl(12, 20%, 44%);
+  --Rose-900: hsl(14, 65%, 9%);
+}
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.rose-50 {
+  color: hsl(20, 50%, 98%);
+}
+.rose-100 {
+  color: hsl(13, 31%, 94%);
+}
+.rose-300 {
+  color: hsl(14, 25%, 72%);
+}
+.rose-400 {
+  color: hsl(7, 20%, 60%);
+}
+.rose-500 {
+  color: hsl(12, 20%, 44%);
+}
+.rose-900 {
+  color: hsl(14, 65%, 9%);
+}
+.main-red {
+  color: hsl(14, 86%, 42%);
+}
+
+.bg-rose-50 {
+    background-color: hsl(20, 50%, 98%);
+  }
+  .bg-rose-100 {
+    background-color: hsl(13, 31%, 94%);
+  }
+  .bg-rose-300 {
+    background-color: hsl(14, 25%, 72%);
+  }
+  .bg-rose-400 {
+    background-color: hsl(7, 20%, 60%);
+  }
+  .bg-rose-500 {
+    background-color: hsl(12, 20%, 44%);
+  }
+  .bg-rose-900 {
+    background-color: hsl(14, 65%, 9%);
+  }
+  .bg-main-red {
+    background-color: hsl(14, 86%, 42%);
+  }
+  
+.order {
+  border-radius: 20px;
+  background-color: var(--Rose-300);
+  margin-bottom: 1em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+body {
+
+  font-family: "Red Hat Display", sans-serif;
+}
+#all-orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#order-details span{
+    display: flex;
+    justify-content: center;
+    gap:1.5em;
+}
+
+.order-1,.order-2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+}
+
+
+.hide-element{
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(3px); /* Blurs the background */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Optional: Adds a semi-transparent black background */
+    z-index: 30; /* Ensure the overlay is behind the modal */
+  }
+
+  #order-details{
+    z-index: 40;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    /* height: 400px; */
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    /* padding: 3em; */
+    color: hsl(7, 20%, 60%);
+
+  }
+
+  .math__sign__2 {
+    border: 1px solid var(--Rose-300);
+    padding: 0.2em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0.3em;
+    right:0.3em;
+    
+  }
+  
+
+  .display-order-cart-item {
+    border-bottom: 1px solid var(--Rose-300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+    margin: 0 1em;
+  }
+  
+  .display-order-cart-item .rose-500 {
+    font-size: 1.1rem;
+  }
+
+
+  .cart-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-weight: 400;
+  }
+  
+  .cart-flex-inner-div {
+    display: flex;
+    gap: 1em;
+  }
+ 
