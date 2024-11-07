@@ -81,19 +81,22 @@
         <div>
           <label for="customerName">Name:</label>
           <input type="text" id="customerName" required />
+          <p class="error-message hide-element" id="name-error">Name is required.</p>
         </div>
         <div>
           <label for="customerEmail">Email:</label>
-          <input type="email" id="customerEmail" />
+          <input type="email" id="customerEmail" required />
+          <p class="error-message hide-element" id="email-error">email is required.</p>
         </div>
         <div>
           <label for="customerPhone">Phone:</label>
-          <input type="tel" id="customerPhone" />
+          <input type="tel" id="customerPhone" required />
+          <p class="error-message hide-element" id="phone-error">Name is required.</p>
         </div>
         <div>
           <label for="address">Delivery Address:</label>
-
           <textarea id="address"></textarea>
+          <p class="error-message hide-element" id="address-error">address is required.</p>
         </div>
         <button type="button" id="submit-details-button">submit details</button>
         </div>

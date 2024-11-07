@@ -23,6 +23,51 @@ let masterArr = [];
 // let editArr = [];
 let displayArr = [cartStore];
 
+
+function validateInput(){
+
+  
+  if(document.getElementById('customerName').value.trim()===""){
+    document.getElementById('name-error').classList.remove("hide-element");
+    setTimeout(()=>{
+      document.getElementById('name-error').classList.add("hide-element");
+    },5000);
+    return false;
+  }else if(document.getElementById('customerEmail').value.trim()===""){
+    document.getElementById('email-error').classList.remove("hide-element");
+    setTimeout(()=>{
+      document.getElementById('email-error').classList.add("hide-element");
+    },5000);
+    return false;
+  }else if(document.getElementById('customerPhone').value.trim()===""){
+    document.getElementById('phone-error').classList.remove("hide-element");
+    setTimeout(()=>{
+      document.getElementById('phone-error').classList.add("hide-element");
+    },5000);
+    return false;
+  }else if(document.getElementById('address').value.trim()===""){
+    document.getElementById('address-error').classList.remove("hide-element");
+    setTimeout(()=>{
+      document.getElementById('address-error').classList.add("hide-element");
+    },5000);
+    return false;
+  }
+
+  }
+    
+    
+  //   ||
+  // document.getElementById('customerEmail').value.trim()===""||
+  // document.getElementById('customerPhone').value.trim()===""||
+  // document.getElementById('address').value.trim()==="")
+  // {
+  //   return false;
+  // }
+  // }else if(document.getElementById('email-error').trim()===""){
+  //     return false;
+  // }
+
+
 function sumArr(arr) {
   let sum = 0;
 
@@ -102,6 +147,11 @@ async function loadData() {
   });
 
   async function submitOrder() {
+    if (validateInput){
+      console.log("invalid input");
+      return;
+    }
+
     const orderCart = {
       customer_name: document.getElementById("customerName").value,
       customer_email: document.getElementById("customerEmail").value,
@@ -109,6 +159,8 @@ async function loadData() {
       address: document.getElementById("address").value,
       items: [cartStore],
     };
+
+
 
     try {
       const response = await fetch("http://127.0.0.1:5000/order", {

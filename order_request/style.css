@@ -154,14 +154,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) ;
     /* height: 400px; */
-    max-height: 500px;
-    overflow-y: scroll;
+    /* max-height: 500px; */
+    
     width: 500px;
     background-color: white;
     border-radius: 10px;
     /* padding: 3em; */
     color: hsl(7, 20%, 60%);
 
+  }
+
+  #show-all-order-details{
+    overflow-y: scroll;
+    max-height: 200px;
+    background-color: var(--Rose-100);
   }
 
   .math__sign__2 {

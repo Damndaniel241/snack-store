@@ -280,8 +280,9 @@ body {
 
 input,
 textarea {
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 8px;
+  margin: 0;
 }
 
 
@@ -298,13 +299,22 @@ textarea {
     color: hsl(7, 20%, 60%);
   }
 
+  #customer-form div div p{
+    margin: 0;
+  }
+
   #customer-form div div:not(#submit-details-button){
     display: flex;
     flex-direction: column;
-    gap:0.4em;
+    /* gap:0.4em; */
   }
   #customer-form div >*{
     margin-bottom: 1em;
+  }
+
+  .error-message{
+    display: block;
+    color: red;
   }
 
   #submit-details-button{
@@ -388,4 +398,48 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+@media screen and (max-width:600px) {
+  #container{
+    flex-direction: column;
+  }
+
+  #items__display{
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+}
+
+.big__display__box {
+  width: calc(350px * 0.8);
+  /* width:80%; */
+
+  justify-self: center;
+}
+
+#customer-form {
+  width: calc(500px * 0.5);
+  padding: calc(3em * 0.5);
+}
+
+}
+
+@media (min-width:601px) and (max-width:993px){
+  #container{
+    flex-direction: column;
+  }
+
+  #items__display{
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+}
+.big__display__box {
+  /* width: calc(350px * 0.8); */
+  /* width:80%; */
+
+  justify-self: center;
+}
 }
